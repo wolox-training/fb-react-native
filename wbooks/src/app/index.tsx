@@ -18,6 +18,9 @@ import {
   DebugInstructions,
   ReloadInstructions
 } from 'react-native/Libraries/NewAppScreen';
+import Reactotron from 'reactotron-react-native';
+
+Reactotron.log('Hello Wolox');
 
 const App = () => {
   return (
