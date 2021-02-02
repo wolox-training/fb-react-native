@@ -1,4 +1,4 @@
-const Colors = {
+const Colors: Record<string, string> = {
   primary: '#00ADEE',
   secondary: '#EAF6FA',
   text: '#4A4A4A',
@@ -8,6 +8,6 @@ const Colors = {
   alert: '#D0011B',
   available: '#A5CD39',
   inactive: '#CFD0D2'
-} as const;
+};
 
 export default Colors;
