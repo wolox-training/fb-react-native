@@ -3,20 +3,19 @@ import Colors from '@constants/colors';
 import Fonts from '@constants/fonts';
 
 const styles = StyleSheet.create({
-  cardContainer: {
+  container: {
     flexDirection: 'row',
     backgroundColor: Colors.white,
-    borderRadius: 12,
-    minHeight: 90
-  },
-  infoContainer: {
-    flex: 0.75,
+    borderRadius: 5,
+    minHeight: 90,
     paddingVertical: 15
   },
-  imageContainer: {
+  dataBook: {
+    flex: 0.75
+  },
+  image: {
     flex: 0.25,
-    justifyContent: 'center',
-    alignItems: 'center'
+    resizeMode: 'contain'
   },
   textTitle: Fonts.H2,
   textAuthor: Fonts.P1
