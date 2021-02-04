@@ -46,7 +46,7 @@ const renderItem: ListRenderItem<Book> = ({ item }) => <BookItem {...item} />;
 
 const FlatListItemSeparator = () => <View style={styles.separator} />;
 
-export default function BookList() {
+function BookList() {
   return (
     <View style={styles.container}>
       <FlatList<Book>
@@ -59,3 +59,5 @@ export default function BookList() {
     </View>
   );
 }
+
+export default BookList;
