@@ -11,7 +11,8 @@ const styles = StyleSheet.create({
     paddingVertical: 15
   },
   dataBook: {
-    flex: 0.75
+    flex: 0.75,
+    paddingRight: 10
   },
   image: {
     flex: 0.25,
