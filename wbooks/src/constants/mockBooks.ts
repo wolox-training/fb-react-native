@@ -1,12 +1,13 @@
-export const BOOKS_MOCK = [
+import { Book } from '@interfaces/books';
+
+export const BOOKS_MOCK: Array<Book> = [
   {
     id: 0,
     author: 'Emmie Thiel',
     title: 'Ring of Bright Water: The revenge of the dark fire ring',
     genre: 'Short story',
     publisher: 'Butterworth-Heinemann',
-    year: '1968',
-    imageUrl: null
+    year: '1968'
   },
   {
     id: 1,
@@ -14,8 +15,7 @@ export const BOOKS_MOCK = [
     title: 'Scavenger Hunt',
     genre: 'other',
     publisher: 'Pocket Books',
-    year: '1989',
-    imageUrl: null
+    year: '1989'
   },
   {
     id: 2,
