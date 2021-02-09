@@ -6,11 +6,16 @@ import { useNavigation } from '@react-navigation/native';
 
 import styles from './styles';
 
-function BookItem({ author, imageUrl, title }: Book) {
+interface Props {
+  book: Book;
+}
+
+function BookItem({ book }: Props) {
   const navigation = useNavigation();
+  const { author, imageUrl, title } = book;
 
   return (
-    <TouchableOpacity onPress={() => navigation.navigate('BookDetail')}>
+    <TouchableOpacity onPress={() => navigation.navigate('BookDetail', { book })}>
       <View style={styles.container}>
         <Image source={{ uri: imageUrl }} style={styles.image} />
         <View style={styles.dataBook}>

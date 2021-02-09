@@ -7,7 +7,7 @@ import { BOOKS_MOCK } from '@constants/mockBooks';
 
 import styles from './styles';
 
-const renderItem: ListRenderItem<Book> = ({ item }) => <BookItem {...item} />;
+const renderItem: ListRenderItem<Book> = ({ item }) => <BookItem book={item} />;
 
 const FlatListItemSeparator = () => <View style={styles.separator} />;
 

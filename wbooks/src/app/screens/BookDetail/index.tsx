@@ -1,12 +1,14 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { View } from 'react-native';
+import { Props } from '@constants/types';
+import BookDetailItem from '@app/components/BookDetailItem';
 
 import styles from './styles';
 
-function BookDetail() {
+function BookDetail({ route }: Props) {
   return (
     <View style={styles.container}>
-      <Text>Book Detail</Text>
+      <BookDetailItem book={route.params.book} />
     </View>
   );
 }
