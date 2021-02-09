@@ -11,11 +11,12 @@ import 'react-native-gesture-handler';
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
+import { RootStackParamList } from '@constants/types';
 
 import Library from './screens/Library';
 import BookDetail from './screens/BookDetail';
 
-const Stack = createStackNavigator();
+const Stack = createStackNavigator<RootStackParamList>();
 
 function App() {
   return (
