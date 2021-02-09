@@ -47,6 +47,16 @@ const Fonts: Record<string, TextStyle> = {
     fontSize: 10,
     fontStyle: 'italic',
     color: Colors.inactive
+  },
+  PrimaryButton: {
+    fontSize: 15,
+    fontStyle: 'normal',
+    color: Colors.white
+  },
+  SecondaryButton: {
+    fontSize: 15,
+    fontStyle: 'normal',
+    color: Colors.primary
   }
 };
 
