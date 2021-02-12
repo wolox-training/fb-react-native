@@ -12,18 +12,35 @@ import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
 import { RootStackParamList } from '@constants/types';
+import Colors from '@constants/colors';
+import { Image } from 'react-native';
 
 import Library from './screens/Library';
 import BookDetail from './screens/BookDetail';
+import styles from './style';
 
 const Stack = createStackNavigator<RootStackParamList>();
+
+const HeaderBackground = () => (
+  <Image source={require('@assets/General/bc_nav_bar.png')} resizeMode="contain" style={styles.header} />
+);
+
+const BackButton = () => <Image source={require('@assets/NavigationBar/ic_back.png')} />;
 
 function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator screenOptions={{ headerBackImage: () => <BackButton /> }}>
         <Stack.Screen name="Library" component={Library} />
-        <Stack.Screen name="BookDetail" component={BookDetail} />
+        <Stack.Screen
+          name="BookDetail"
+          component={BookDetail}
+          options={{
+            title: 'BOOK DETAIL',
+            headerTintColor: Colors.white,
+            headerBackground: () => <HeaderBackground />
+          }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
