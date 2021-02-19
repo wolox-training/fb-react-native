@@ -5,13 +5,13 @@ import styles from './styles';
 
 interface Props {
   label: string;
-  type: string;
+  secondary?: boolean;
 }
 
-function CustomButton({ label, type }: Props) {
+function CustomButton({ label, secondary }: Props) {
   return (
-    <TouchableOpacity style={type === 'primary' ? styles.primaryContainer : styles.secondaryContainer}>
-      <Text style={type === 'primary' ? styles.primaryText : styles.secondaryText}>{label}</Text>
+    <TouchableOpacity style={[styles.primaryContainer, secondary && styles.secondaryContainer]}>
+      <Text style={[styles.primaryText, secondary && styles.secondaryText]}>{label}</Text>
     </TouchableOpacity>
   );
 }
