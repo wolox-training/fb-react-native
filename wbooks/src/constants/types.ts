@@ -1,5 +1,5 @@
-import { Book } from '@interfaces/books';
 import { StackScreenProps } from '@react-navigation/stack';
+import { Book } from '@interfaces/books';
 
 export type RootStackParamList = {
   Library: undefined;

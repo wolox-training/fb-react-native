@@ -9,6 +9,7 @@
  */
 import 'react-native-gesture-handler';
 import React from 'react';
+import { StatusBar } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
 import { RootStackParamList } from '@constants/types';
@@ -21,6 +22,7 @@ const Stack = createStackNavigator<RootStackParamList>();
 function App() {
   return (
     <NavigationContainer>
+      <StatusBar barStyle="dark-content" />
       <Stack.Navigator>
         <Stack.Screen name="Library" component={Library} />
         <Stack.Screen name="BookDetail" component={BookDetail} />
