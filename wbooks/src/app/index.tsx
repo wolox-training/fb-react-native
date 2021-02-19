@@ -9,11 +9,11 @@
  */
 import 'react-native-gesture-handler';
 import React from 'react';
+import { StatusBar, Image } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
 import { RootStackParamList } from '@constants/types';
 import Colors from '@constants/colors';
-import { Image } from 'react-native';
 
 import Library from './screens/Library';
 import BookDetail from './screens/BookDetail';
@@ -30,7 +30,11 @@ const BackButton = () => <Image source={require('@assets/NavigationBar/ic_back.p
 function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{ headerBackImage: () => <BackButton /> }}>
+      <StatusBar barStyle="dark-content" />
+      <Stack.Navigator
+        screenOptions={{
+          headerBackImage: () => <BackButton />
+        }}>
         <Stack.Screen name="Library" component={Library} />
         <Stack.Screen
           name="BookDetail"
