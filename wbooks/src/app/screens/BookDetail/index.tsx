@@ -1,8 +1,8 @@
 import React from 'react';
 import { View } from 'react-native';
 import { Props } from '@constants/types';
-import BookDetailItem from '@app/screens/BookDetail/components/BookDetailItem';
 
+import BookDetailItem from './components/BookDetailItem';
 import styles from './styles';
 
 function BookDetail({ route }: Props) {
