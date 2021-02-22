@@ -9,37 +9,30 @@
  */
 import 'react-native-gesture-handler';
 import React from 'react';
+import { Image, StatusBar } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 import { RootStackParamList } from '@constants/types';
-import { Image } from 'react-native';
 import Colors from '@constants/colors';
 import Library from '@screens/Library';
 import Settings from '@screens/Settings';
 import BookDetail from '@screens/BookDetail';
+import { LIBRARY, SETTINGS } from '@constants/routes';
 
-import styles from './style';
-
-const HeaderBackground = () => (
-  <Image source={require('@assets/General/bc_nav_bar.png')} resizeMode="contain" style={styles.header} />
-);
-
-const BackButton = () => <Image source={require('@assets/NavigationBar/ic_back.png')} />;
+import SCREEN_OPTS from './constants';
 
 const LibraryStack = createStackNavigator<RootStackParamList>();
 
 function LibraryStackScreen() {
   return (
-    <LibraryStack.Navigator screenOptions={{ headerBackImage: () => <BackButton /> }}>
-      <LibraryStack.Screen name="Library" component={Library} />
+    <LibraryStack.Navigator screenOptions={SCREEN_OPTS}>
+      <LibraryStack.Screen name={LIBRARY} component={Library} />
       <LibraryStack.Screen
         name="BookDetail"
         component={BookDetail}
         options={{
-          title: 'BOOK DETAIL',
-          headerTintColor: Colors.white,
-          headerBackground: () => <HeaderBackground />
+          title: 'BOOK DETAIL'
         }}
       />
     </LibraryStack.Navigator>
@@ -50,8 +43,8 @@ const SettingsStack = createStackNavigator();
 
 function SettingsStackScreen() {
   return (
-    <SettingsStack.Navigator>
-      <SettingsStack.Screen name="Settings" component={Settings} />
+    <SettingsStack.Navigator screenOptions={SCREEN_OPTS}>
+      <SettingsStack.Screen name={SETTINGS} component={Settings} />
     </SettingsStack.Navigator>
   );
 }
@@ -61,6 +54,7 @@ const Tab = createBottomTabNavigator();
 function App() {
   return (
     <NavigationContainer>
+      <StatusBar barStyle="dark-content" />
       <Tab.Navigator
         tabBarOptions={{
           activeTintColor: Colors.primary,

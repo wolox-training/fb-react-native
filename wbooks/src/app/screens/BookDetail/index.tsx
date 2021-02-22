@@ -1,7 +1,7 @@
 import React from 'react';
 import { View } from 'react-native';
 import { Props } from '@constants/types';
-import BookDetailItem from '@app/components/BookDetailItem';
+import BookDetailItem from '@app/screens/BookDetail/components/BookDetailItem';
 
 import styles from './styles';
 

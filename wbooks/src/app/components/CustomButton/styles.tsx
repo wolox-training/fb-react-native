@@ -4,8 +4,8 @@ import Fonts from '@constants/fonts';
 
 const styles = StyleSheet.create({
   primaryContainer: {
-    height: 44,
     backgroundColor: Colors.primary,
+    height: 44,
     borderRadius: 100
   },
   primaryText: {
@@ -15,17 +15,12 @@ const styles = StyleSheet.create({
     textTransform: 'uppercase'
   },
   secondaryContainer: {
-    height: 44,
     backgroundColor: Colors.white,
-    borderRadius: 100,
     borderWidth: 1,
     borderColor: Colors.primary
   },
   secondaryText: {
-    ...Fonts.SecondaryButton,
-    paddingVertical: 10,
-    alignSelf: 'center',
-    textTransform: 'uppercase'
+    ...Fonts.SecondaryButton
   }
 });
 

@@ -1,9 +1,7 @@
-import { Dimensions, StyleSheet } from 'react-native';
-
-const { width } = Dimensions.get('screen');
+import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
-  header: { padding: 56, width }
+  header: { resizeMode: 'stretch', width: '100%' }
 });
 
 export default styles;
