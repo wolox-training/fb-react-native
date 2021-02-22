@@ -7,15 +7,16 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     backgroundColor: Colors.white,
     borderRadius: 5,
-    minHeight: 90,
-    paddingVertical: 15
+    paddingVertical: 15,
+    paddingRight: 15
   },
   dataBook: {
-    flex: 0.75,
-    paddingRight: 10
+    flex: 0.75
   },
   image: {
     flex: 0.25,
+    width: 39,
+    height: 60,
     resizeMode: 'contain'
   },
   textTitle: Fonts.H2,

@@ -7,9 +7,11 @@ import { BOOKS_MOCK } from '@constants/mockBooks';
 
 import styles from './styles';
 
-const renderItem: ListRenderItem<Book> = ({ item }) => <BookItem {...item} />;
+const renderItem: ListRenderItem<Book> = ({ item }) => <BookItem book={item} />;
 
-const FlatListItemSeparator = () => <View style={styles.separator} />;
+const keyExtractor = ({ id }: Book) => String(id);
+
+const flatListItemSeparator = () => <View style={styles.separator} />;
 
 function BookList() {
   const insets = useSafeAreaInsets();
@@ -19,8 +21,8 @@ function BookList() {
       data={BOOKS_MOCK}
       renderItem={renderItem}
       showsVerticalScrollIndicator={false}
-      ItemSeparatorComponent={FlatListItemSeparator}
-      keyExtractor={item => item.id.toString()}
+      ItemSeparatorComponent={flatListItemSeparator}
+      keyExtractor={keyExtractor}
       style={styles.container}
       contentContainerStyle={{ paddingBottom: Math.max(insets.bottom, 20) }}
     />
