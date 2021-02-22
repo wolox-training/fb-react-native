@@ -9,40 +9,29 @@
  */
 import 'react-native-gesture-handler';
 import React from 'react';
-import { StatusBar, Image } from 'react-native';
+import { StatusBar } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
 import { RootStackParamList } from '@constants/types';
-import Colors from '@constants/colors';
-import backButton from '@assets/NavigationBar/ic_back.png';
-import headerBg from '@assets/General/bc_nav_bar.png';
+import { LIBRARY, BOOK_DETAIL } from '@constants/routes';
 
 import Library from './screens/Library';
 import BookDetail from './screens/BookDetail';
-import styles from './style';
+import SCREEN_OPTS from './constants';
 
 const Stack = createStackNavigator<RootStackParamList>();
-
-const HeaderBackground = () => <Image source={headerBg} resizeMode="contain" style={styles.header} />;
-
-const BackButton = () => <Image source={backButton} />;
 
 function App() {
   return (
     <NavigationContainer>
       <StatusBar barStyle="dark-content" />
-      <Stack.Navigator
-        screenOptions={{
-          headerBackImage: () => <BackButton />
-        }}>
-        <Stack.Screen name="Library" component={Library} />
+      <Stack.Navigator screenOptions={SCREEN_OPTS}>
+        <Stack.Screen name={LIBRARY} component={Library} />
         <Stack.Screen
-          name="BookDetail"
+          name={BOOK_DETAIL}
           component={BookDetail}
           options={{
-            title: 'BOOK DETAIL',
-            headerTintColor: Colors.white,
-            headerBackground: () => <HeaderBackground />
+            title: 'BOOK DETAIL'
           }}
         />
       </Stack.Navigator>
