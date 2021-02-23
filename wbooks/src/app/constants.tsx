@@ -6,14 +6,15 @@ import headerBg from '@assets/General/bc_nav_bar.png';
 
 import styles from './style';
 
+// TODO: Move this constants inside AppNavigator folder in the TabBar PR
+
 const HeaderBackground = () => <Image source={headerBg} style={styles.header} />;
 
 const BackButton = () => <Image source={backButton} />;
 
 export const SCREEN_OPTS = {
+  headerBackground: () => <HeaderBackground />,
   headerBackImage: () => <BackButton />,
-  headerTintColor: Colors.white,
-  headerBackground: () => <HeaderBackground />
+  headerBackTitleVisible: false,
+  headerTintColor: Colors.white
 };
-
-export default SCREEN_OPTS;

@@ -8,7 +8,7 @@ import Library from '@screens/Library';
 import Settings from '@screens/Settings';
 import BookDetail from '@screens/BookDetail';
 import { LIBRARY, SETTINGS } from '@constants/routes';
-import SCREEN_OPTS from '@app/constants';
+import { SCREEN_OPTS } from '@app/constants';
 
 import TabIcon from './TabIcon';
 
