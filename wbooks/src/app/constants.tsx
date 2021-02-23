@@ -11,7 +11,7 @@ import styles from './style';
 
 const HeaderBackground = () => <Image source={headerBg} style={styles.header} />;
 
-const BackButton = () => <Image source={backButton} />;
+const BackButton = () => <Image source={backButton} style={styles.back} />;
 
 export const SCREEN_OPTS = {
   headerTitleStyle: Fonts.H3,
