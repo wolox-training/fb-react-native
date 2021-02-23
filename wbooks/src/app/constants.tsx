@@ -6,6 +6,8 @@ import headerBg from '@assets/General/bc_nav_bar.png';
 
 import styles from './style';
 
+// TODO: Move this constants inside AppNavigator folder in the TabBar PR
+
 const HeaderBackground = () => <Image source={headerBg} style={styles.header} />;
 
 const BackButton = () => <Image source={backButton} />;
