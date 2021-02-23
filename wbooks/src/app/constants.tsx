@@ -11,9 +11,8 @@ const HeaderBackground = () => <Image source={headerBg} style={styles.header} />
 const BackButton = () => <Image source={backButton} />;
 
 export const SCREEN_OPTS = {
+  headerBackground: () => <HeaderBackground />,
   headerBackImage: () => <BackButton />,
-  headerTintColor: Colors.white,
-  headerBackground: () => <HeaderBackground />
+  headerBackTitleVisible: false,
+  headerTintColor: Colors.white
 };
-
-export default SCREEN_OPTS;

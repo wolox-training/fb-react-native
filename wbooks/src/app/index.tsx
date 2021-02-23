@@ -17,7 +17,7 @@ import { LIBRARY, BOOK_DETAIL } from '@constants/routes';
 
 import Library from './screens/Library';
 import BookDetail from './screens/BookDetail';
-import SCREEN_OPTS from './constants';
+import { SCREEN_OPTS } from './constants';
 
 const Stack = createStackNavigator<RootStackParamList>();
 
@@ -26,7 +26,13 @@ function App() {
     <NavigationContainer>
       <StatusBar barStyle="dark-content" />
       <Stack.Navigator screenOptions={SCREEN_OPTS}>
-        <Stack.Screen name={LIBRARY} component={Library} />
+        <Stack.Screen
+          name={LIBRARY}
+          component={Library}
+          options={{
+            title: 'LIBRARY'
+          }}
+        />
         <Stack.Screen
           name={BOOK_DETAIL}
           component={BookDetail}
