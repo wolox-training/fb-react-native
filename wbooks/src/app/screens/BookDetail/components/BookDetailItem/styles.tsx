@@ -5,10 +5,19 @@ import Fonts from '@constants/fonts';
 const styles = StyleSheet.create({
   container: {
     borderRadius: 5,
-    paddingHorizontal: 30,
     paddingVertical: 15,
-    justifyContent: 'space-around',
-    backgroundColor: Colors.white
+    paddingHorizontal: 20,
+    marginHorizontal: 20,
+    backgroundColor: Colors.white,
+    marginTop: 10,
+    shadowColor: Colors.black,
+    shadowOpacity: 0.15,
+    shadowOffset: {
+      width: 0,
+      height: 1
+    },
+    shadowRadius: 1,
+    elevation: 1
   },
   detailContainer: {
     flexDirection: 'row',
@@ -20,9 +29,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     resizeMode: 'contain'
   },
-  dataBook: {
-    marginHorizontal: 30
-  },
+  dataBook: { marginLeft: 20, marginEnd: 60 },
   textTitle: Fonts.H1,
   textAvailability: Fonts.H4,
   textBasic: Fonts.P1,

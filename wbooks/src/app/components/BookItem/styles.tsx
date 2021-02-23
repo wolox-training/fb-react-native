@@ -8,7 +8,15 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.white,
     borderRadius: 5,
     paddingVertical: 15,
-    paddingRight: 15
+    paddingRight: 15,
+    shadowColor: Colors.black,
+    shadowOpacity: 0.15,
+    shadowOffset: {
+      width: 0,
+      height: 1
+    },
+    shadowRadius: 1,
+    elevation: 1
   },
   dataBook: {
     flex: 0.75
