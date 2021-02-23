@@ -2,8 +2,8 @@ import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
-    paddingHorizontal: 20,
-    paddingTop: 10
+    marginHorizontal: 20,
+    marginTop: 10
   },
   separator: {
     height: 10

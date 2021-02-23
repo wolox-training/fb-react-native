@@ -11,7 +11,7 @@ const Fonts: Record<string, TextStyle> = {
   H2: {
     fontSize: 17,
     fontWeight: 'bold',
-    color: Colors.grey
+    color: Colors.text
   },
   H3: {
     fontSize: 17,
@@ -25,8 +25,8 @@ const Fonts: Record<string, TextStyle> = {
   },
   P1: {
     fontSize: 15,
-    fontWeight: '100',
-    color: Colors.grey
+    fontWeight: '300',
+    color: Colors.text
   },
   P2: {
     fontSize: 12,

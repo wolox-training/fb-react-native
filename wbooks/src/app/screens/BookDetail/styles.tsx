@@ -4,9 +4,7 @@ import Colors from '@constants/colors';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: Colors.secondary,
-    paddingHorizontal: 20,
-    paddingTop: 10
+    backgroundColor: Colors.secondary
   }
 });
 
