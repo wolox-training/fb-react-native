@@ -8,7 +8,8 @@ import Settings from '@screens/Settings';
 import BookDetail from '@screens/BookDetail';
 import { BOOK_DETAIL, LIBRARY, SETTINGS } from '@constants/routes';
 import { SCREEN_OPTS } from '@constants/header';
-import TabIcon from '@components/AppNavigator/components/TabIcon';
+
+import TabIcon from './components/TabIcon';
 
 const LibraryStack = createStackNavigator<RootStackParamList>();
 
