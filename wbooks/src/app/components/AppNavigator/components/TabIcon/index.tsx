@@ -1,6 +1,6 @@
-import 'react-native-gesture-handler';
 import React from 'react';
 import { Image } from 'react-native';
+import { LIBRARY, SETTINGS } from '@constants/routes';
 import libraryAct from '@assets/ToolBar/ic_library_active.png';
 import settingsAct from '@assets/ToolBar/ic_settings_active.png';
 import library from '@assets/ToolBar/ic_library.png';
@@ -13,16 +13,12 @@ interface Props {
 
 function TabIcon({ focused, route }: Props) {
   switch (route.name) {
-    case 'Library':
-      if (focused) {
-        return <Image source={libraryAct} resizeMode="contain" />;
-      }
-      return <Image source={library} resizeMode="contain" />;
-    case 'Settings':
-      if (focused) {
-        return <Image source={settingsAct} resizeMode="contain" />;
-      }
-      return <Image source={settings} resizeMode="contain" />;
+    case LIBRARY: {
+      return <Image source={focused ? libraryAct : library} resizeMode="contain" />;
+    }
+    case SETTINGS: {
+      return <Image source={focused ? settingsAct : settings} resizeMode="contain" />;
+    }
     default:
       return null;
   }
