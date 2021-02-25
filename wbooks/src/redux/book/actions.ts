@@ -7,7 +7,7 @@ export const actions = {
   GET_BOOKS_FAILURE: 'GET_BOOKS_FAILURE'
 } as const;
 
-export const BookActions = {
+export const actionCreators = {
   getBooks: () => (dispatch: Dispatch) => {
     dispatch({ type: actions.GET_BOOKS });
     const response = { ok: true, data: BOOKS_MOCK, problem: null };
@@ -19,4 +19,4 @@ export const BookActions = {
   }
 };
 
-export default BookActions;
+export default actionCreators;

@@ -1,6 +1,6 @@
 import { createStore, applyMiddleware, compose } from 'redux';
-import Reactotron from '@config/reactotronConfig';
 import thunk from 'redux-thunk';
+import Reactotron from '@config/reactotronConfig';
 
 import bookReducer from './book/reducer';
 

@@ -1,5 +1,4 @@
-import { BookState } from '@interfaces/redux';
-import { GetBooksActionTypes } from '@constants/types';
+import { BookState, GetBooksActionTypes } from '@interfaces/redux';
 
 import { actions } from './actions';
 
