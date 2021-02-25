@@ -1,5 +1,6 @@
 import Reactotron from 'reactotron-react-native';
 import { reactotronRedux } from 'reactotron-redux';
+import tronsauce from 'reactotron-apisauce';
 import { Tron } from 'src/interfaces/reactotron';
 
 Reactotron
@@ -8,6 +9,7 @@ Reactotron
   // controls connection & communication settings
   .useReactNative()
   // add all built-in react native plugins
+  .use(tronsauce())
   .use(reactotronRedux())
   .connect();
 // let's connect!
