@@ -1,25 +1,31 @@
-export const initialState = {
+import { BookState } from '@interfaces/redux';
+import { GetBooksActionTypes } from '@constants/types';
+
+import { actions } from './actions';
+
+export const initialState: BookState = {
   books: [],
   isLoading: false,
   hasError: false
 };
 
-const reducer = (state = initialState, action: any) => {
+const bookReducer = (state = initialState, action: GetBooksActionTypes) => {
   switch (action.type) {
-    case 'GET_BOOKS':
+    case actions.GET_BOOKS:
       return {
         ...state,
         isLoading: true
       };
-    case 'GET_BOOKS_SUCCESS':
+    case actions.GET_BOOKS_SUCCESS:
       return {
         ...state,
         books: action.payload,
         isLoading: false
       };
-    case 'GET_BOOKS_FAILURE':
+    case actions.GET_BOOKS_FAILURE:
       return {
         ...state,
+        isLoading: false,
         hasError: action.payload
       };
     default:
@@ -27,4 +33,4 @@ const reducer = (state = initialState, action: any) => {
   }
 };
 
-export default reducer;
+export default bookReducer;
