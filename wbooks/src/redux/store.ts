@@ -1,10 +1,15 @@
 import { createStore, applyMiddleware, compose } from 'redux';
+import Reactotron from '@config/reactotronConfig';
 import thunk from 'redux-thunk';
-import reducer from '@redux/book/reducer';
-import reactotron from '@config/reactotronConfig';
 
-const middleware = applyMiddleware(thunk);
+import bookReducer from './book/reducer';
 
-const store = createStore(reducer, compose(middleware, reactotron.createEnhancer()));
+const middlewares = [applyMiddleware(thunk)];
+
+if (__DEV__) {
+  middlewares.push(Reactotron.createEnhancer());
+}
+
+const store = createStore(bookReducer, compose(...middlewares));
 
 export default store;

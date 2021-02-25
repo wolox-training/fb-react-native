@@ -2,7 +2,7 @@ import Reactotron from 'reactotron-react-native';
 import { reactotronRedux } from 'reactotron-redux';
 import { Tron } from 'src/interfaces/reactotron';
 
-const reactotron = Reactotron
+Reactotron
   // .setAsyncStorageHandler(AsyncStorage) // AsyncStorage would either come from `react-native` or `@react-native-community/async-storage` depending on where you get it from
   .configure({ name: 'wbooks' })
   // controls connection & communication settings
@@ -22,4 +22,4 @@ console.tron = {
   log: Reactotron.log
 };
 
-export default reactotron;
+export default Reactotron;
