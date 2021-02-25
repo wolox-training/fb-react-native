@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { View, FlatList, ListRenderItem } from 'react-native';
+import { useSelector, useDispatch } from 'react-redux';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import BookItem from '@components/BookItem';
 import { Book } from '@interfaces/books';
-import { BOOKS_MOCK } from '@constants/mockBooks';
+import { BookState } from '@interfaces/redux';
+import BookActions from '@redux/book/actions';
+import BookItem from '@components/BookItem';
 
 import styles from './styles';
 
@@ -15,10 +17,16 @@ const flatListItemSeparator = () => <View style={styles.separator} />;
 
 function BookList() {
   const insets = useSafeAreaInsets();
+  const dispatch = useDispatch();
+  const books = useSelector<BookState, Book[]>(state => state.books);
+
+  useEffect(() => {
+    dispatch(BookActions.getBooks());
+  }, [dispatch]);
 
   return (
     <FlatList
-      data={BOOKS_MOCK}
+      data={books}
       renderItem={renderItem}
       showsVerticalScrollIndicator={false}
       ItemSeparatorComponent={flatListItemSeparator}
