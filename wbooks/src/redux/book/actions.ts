@@ -1,5 +1,12 @@
 import { Dispatch } from 'redux';
 import BookService from '@services/BookService';
+import { Book } from '@interfaces/books';
+
+interface responseProps {
+  ok: boolean;
+  data: Book;
+  problem: string | null;
+}
 
 export const actions = {
   GET_BOOKS: 'GET_BOOKS',
@@ -10,7 +17,7 @@ export const actions = {
 export const actionCreators = {
   getBooks: () => async (dispatch: Dispatch) => {
     dispatch({ type: actions.GET_BOOKS });
-    const response = await BookService.getBooks();
+    const response: any = await BookService.getBooks();
     if (response.ok) {
       dispatch({ type: actions.GET_BOOKS_SUCCESS, payload: response.data });
     } else {

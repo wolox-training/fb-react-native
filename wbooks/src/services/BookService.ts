@@ -2,7 +2,9 @@ import { BOOKS_MOCK } from '@constants/mockBooks';
 
 export const BookService = {
   getBooks: () => {
-    return { ok: true, data: BOOKS_MOCK, problem: null };
+    return new Promise(resolve => {
+      resolve({ ok: true, data: BOOKS_MOCK, problem: null });
+    });
   }
 };
 
