@@ -1,5 +1,7 @@
 export interface BookState {
-  books: [];
+  bookReducer: {
+    books: [];
+  };
 }
 export interface GetBooksActionTypes {
   type: string;
