@@ -1,7 +1,7 @@
 export interface BookState {
-  books: [];
-  isLoading: boolean;
-  hasError: boolean;
+  bookReducer: {
+    books: [];
+  };
 }
 export interface GetBooksActionTypes {
   type: string;

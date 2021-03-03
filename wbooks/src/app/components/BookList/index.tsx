@@ -18,7 +18,7 @@ const flatListItemSeparator = () => <View style={styles.separator} />;
 function BookList() {
   const insets = useSafeAreaInsets();
   const dispatch = useDispatch();
-  const books = useSelector<BookState, Book[]>(state => state.books);
+  const books = useSelector<BookState, Book[]>(state => state.bookReducer.books);
 
   useEffect(() => {
     dispatch(BookActions.getBooks());

@@ -14,7 +14,7 @@ import App from './src/app';
 // Note: test renderer must be required after react-native.
 
 const mockStore = configureMockStore([thunk]);
-const store = mockStore({ books: [] });
+const store = mockStore({ bookReducer: { books: [] } });
 it('renders correctly', () => {
   renderer.create(
     <Provider store={store}>
