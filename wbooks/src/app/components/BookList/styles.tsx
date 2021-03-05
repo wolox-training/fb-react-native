@@ -7,6 +7,13 @@ const styles = StyleSheet.create({
   },
   separator: {
     height: 10
+  },
+  emptyListText: {
+    textAlign: 'center'
+  },
+  emptyListContainer: {
+    flex: 1,
+    justifyContent: 'center'
   }
 });
 
