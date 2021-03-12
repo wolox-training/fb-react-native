@@ -9,9 +9,11 @@ const middlewares = [applyMiddleware(thunk, fetchMiddleware)];
 const reducers = combineReducers({ bookReducer });
 
 if (__DEV__) {
-  middlewares.push(Reactotron.createEnhancer());
+  middlewares.push(Reactotron.createEnhancer(true));
 }
 
 const store = createStore(reducers, compose(...middlewares));
+
+if (__DEV__) Reactotron.setReduxStore(store);
 
 export default store;
