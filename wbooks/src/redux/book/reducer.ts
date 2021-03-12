@@ -6,7 +6,7 @@ export const stateDescription = {
   books: []
 };
 
-const initialState = completeState(stateDescription);
+export const initialState = completeState(stateDescription);
 
 const bookReducer = {
   primaryActions: [actions.GET_BOOKS]
